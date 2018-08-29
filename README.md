@@ -1,37 +1,127 @@
-## Welcome to GitHub Pages
+# 經濟數據網頁(後台操作說明)
 
-You can use the [editor on GitHub](https://github.com/gjb25638/MyFirstRepository/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## 後台操作說明
+於[**前台網址**](http://marketinfo.infostrum.com.tw/MKIS/jspx/information)後面加上 ***mode=backend*** 即可進入[**後台管理系統**](http://marketinfo.infostrum.com.tw/MKIS/jspx/information?mode=backend)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![](https://imgur.com/4DcCwAR.png)
 
-### Markdown
+---
+### 多檔匯入
+![](https://imgur.com/z2rU2xu.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* 按下後會跳出檔案匯入對話框
+* 有效日
+    * 可設定匯入資料的有效日(資料於何日開放客戶查閱)，若不設定則代表資料匯入後客戶即可立即查閱
+    * 按下選擇框後再點選向下箭頭會跳出小日曆可快速選擇年、月、日
+    * 一次匯入只能設定一個有效日，若多個檔案要使用不同有效日則必須個別匯入
+* 匯入選擇框
+    * 按下選擇檔案按鈕可選擇想要匯入的單檔或多個檔案 (Ctrl按下不放然後選取多檔，或者Ctrl+A選擇資料夾內全部檔案)
+* 關閉
+    * 關閉檔案匯入對話框
+* 匯入按鈕
+    * 按下匯入按鈕會立即將選取的資料和資料的有效日匯入資料庫。
+    * 若資料庫中存在相同月份的資料，則會以匯入的新資料覆蓋資料庫的舊資料
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+---
+### 語系切換
+![](https://imgur.com/pqY6hWr.png)
 
-- Bulleted
-- List
+* 支援語系
+    * 繁體中文
+    * 簡體中文
+    * 英文
+    * 日文
+* 切換後週曆文字改變成對應語系
+* 切換後一般文字改變成對應語系
+* 切換後下面列表會呈現相同語系的項目
 
-1. Numbered
-2. List
+---
+### 篩選
+![](https://imgur.com/uYYl6wb.png)
 
-**Bold** and _Italic_ and `Code` text
+* 選擇所有
+    * 按下後在下面列表中顯示所有國家資料
+* 清除選擇
+    * 按下後在下面列表中隱藏所有國家資料
+* 下方國家核取方塊
+    * 顯示勾選的國家
+    * 隱藏未勾選的國家
 
-[Link](url) and ![Image](src)
-```
+---
+### 時區選擇
+![](https://imgur.com/IB9QFFn.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* 選擇後週選擇器上改成選取整週
+* 選擇後列表中資料的時間欄位值改變成對應時區事件的發生時間
 
-### Jekyll Themes
+---
+### 周選擇器
+![](https://i.imgur.com/V9nxOhw.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gjb25638/MyFirstRepository/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* 進入網頁時會鎖定在當日
+* 上週
+    * 可跳至上週
+    * 跳過去後會顯示整週的經濟數據
+* 下週
+    * 可跳至下週
+    * 跳過去後會顯示整週的經濟數據
+* 週一 ~ 週日
+    * 按下會顯示單日的經濟數據
 
-### Support or Contact
+---
+### 日曆選擇器
+![](https://imgur.com/AZqiGaR.png)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* 進入網頁時會鎖定在當日
+* 按下輸入框後會跳出小日曆
+* 可選擇想要跳至的年、月
+* 按下日曆中的日期會直接跳至所選日期，並於下方列表顯示跳至日期的經濟數據
+
+---
+### 顯示一周全部
+![](https://imgur.com/CPHJqW9.png)
+
+* 按下後會顯示整週的經濟數據
+
+---
+### 新增日期下拉選單
+![](https://i.imgur.com/6ESXZ7j.png)
+
+* 按下後會跳出當週的所有日期
+* 選擇想要新增資料的日期，或是直接利用周選擇器跳至想要添加資料的那天
+
+---
+### 新增
+![](https://imgur.com/IR7Vpnj.png)
+
+* 按下後會在所選日期出現新的一筆資料
+* 新增的資料會以藍色表示，狀態欄位值會呈現 NEW
+* 填完資料的所有欄位後按下更新按鈕即會將資料新增至資料庫
+* 按下更新後狀態欄位值會呈現 DONE
+
+---
+### 刪除
+![](https://imgur.com/499ZMi6.png)
+
+* 選擇欲刪除資料 (被選取的資料會以特殊色呈現框線)
+* 按下刪除按鈕後資料會以紅色表示，狀態欄位值會呈現 DELETED
+* 接著若按下更新按鈕則所有以紅色表示的資料會立刻從資料庫刪除，列表中的資料也會立即不見
+* 若是對藍色表示的欄位(剛新增的欄位)按下刪除，則會直接從列表中移除，不需再按更新按鈕
+
+---
+![](https://i.imgur.com/ADsW86M.png)
+
+### 更新資料欄位
+* 當有資料中的欄位被修改時，那筆資料的狀態欄位值會呈現 UPDATED
+* 此時介面上會多出一個還原按鈕
+* 選擇此筆資料 (被選取的資料會以特殊色呈現框線)
+* 若按下還原按鈕則此筆資料的所有欄位會還原成修改前的值，狀態欄位值會呈現 DONE
+* 若按下更新按鈕會將更動的資料更新到資料庫內對應的資料，狀態欄位值會呈現 DONE
+
+---
+### `事件`、`前值`、`預估值`、`實際值`欄位的更動
+![](https://imgur.com/uxtkgPb.png)
+
+* 此四個資料的文字內容都可以加上顏色
+* 將滑鼠游標移到框框下面的小圓點上，會跑出一個調色盤，點選想要的顏色後框框內的文字顏色會隨著改變
